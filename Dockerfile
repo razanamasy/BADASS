@@ -3,5 +3,6 @@ RUN frrouting/frr
 RUN sudo apt-get update
 RUN apt-get -y install busybox
 RUN sed -i 's/bgpd=no/bgpd=yes/g' /etc/frr/daemons
-RUN sed -i 's/ospdf=no/ospdf=yes/g' /etc/frr/daemons
+RUN sed -i 's/ospdfd=no/ospdfd=yes/g' /etc/frr/daemons
+RUN sed -i 's/isisd=no/isisd=yes/g' /etc/frr/daemons
 CMD ["bash", "service frr restart"]

@@ -8,3 +8,4 @@ RUN sed -i 's/bgpd=no/bgpd=yes/g' /etc/frr/daemons
 RUN sed -i 's/ospfd=no/ospfd=yes/g' /etc/frr/daemons
 RUN sed -i 's/isisd=no/isisd=yes/g' /etc/frr/daemons
 RUN chown -R frr:frr /etc/frr
+RUN echo "FRR_NO_ROOT="yes"" >> /etc/frr/daemons

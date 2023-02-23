@@ -1,0 +1,19 @@
+ip link add br0 type bridge  // le nom d'interface br0 est delibere mais on set son type a bridge 
+ip link set dev br0 up  // dev pour device, ici on upstate juste l'interface
+
+ip addr add 10.1.1.1/24 dev eth0  // on set up l'interface ethernet0
+ip addr show eth0  // si on veut regarder les settings de l'interface
+
+ip link add name vxlan10 type vxlan id 10 dev eth0 remote 10.1.1.2 local 10.1.1.1 dstport 4789
+ip addr add 20.1.1.1/24 de vxlan10
+
+ip -d link show vxlan10
+
+brctl addif br0 eth1
+brctl addif br0 vxlan10
+ip link set dev vxlan10 up
+ip -d link show vxlan10
+
+ip link show eth1
+ip link show vxlan10
+

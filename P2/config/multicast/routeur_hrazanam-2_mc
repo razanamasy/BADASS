@@ -12,7 +12,7 @@ ip addr add 10.1.1.2 dev eth0
 #Ajout de l’interface type vxlan
 # On indique :
 # Par quelle interface ethernet (eth0) passer
-# Les adress des interface eth0 du routeur remote et du routeur local
+# L'address multicast dont le vxlan du routeur fera parti
 ip link add  name vxlan10 type vxlan id 10 dev eth0 groupe 239.1.1.1 dstport 4789
 
 #Attribution ip a l’interface vxlan

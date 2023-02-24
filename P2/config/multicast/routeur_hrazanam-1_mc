@@ -1,3 +1,5 @@
+#/bin/bash
+
 #Ajout d’une interface bridge qui fera le bridge de eth1 a vxlan : 
 #Donc, dans lequel on ajoutera les interfaces eth1 et vxlan
 ip link add br0 type bridge
@@ -7,7 +9,7 @@ ip link set dev br0 up
 
 #configuration de l’interface réseaux ethernet du routeur :
 #On ajoute une IP a interface eth0 du routeur (qui route vers host1)
-ip addr add 10.1.1.1 dev eth0
+ip addr add 10.1.1.1/24 dev eth0
 
 #Ajout de l’interface type vxlan
 # On indique :

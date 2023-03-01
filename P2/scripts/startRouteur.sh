@@ -33,5 +33,5 @@ do
     continue
   fi
   echo "Running script on container: $container (hostname: $hostname)"
-  docker exec -it $container $script
+  docker exec -it $container bash -c "chmod +x /$script && /$script"
 done

@@ -1,24 +1,18 @@
 #/bin/bash
 
-#Ajout d’une interface bridge qui fera le bridge de eth1 a vxlan : 
-#Donc, dans lequel on ajoutera les interfaces eth1 et vxlan
+#Ajout d’un bridge qui fera le bridge de eth1 a vxlan : 
+#Donc, dans lequel on ajoutera l'interface interfaces eth1 et vxlan10
 ip link add br0 type bridge
 
 #up du bridge
 ip link set dev br0 up
 
 #configuration de l’interface réseaux ethernet du routeur :
-#On ajoute une IP a interface eth0 du routeur (qui route vers host1)
+#On ajoute une IP a interface eth0 du switch
 ip addr add 10.1.1.1/24 dev eth0
 
-#Ajout de l’interface type vxlan
-# On indique :
-# Par quelle interface ethernet (eth0) passer
-# L'address multicast dans laquelle le vxlan fera parti
+#Creation de la VxLAN qui multicast sur l'adresse de multi cast classe D (224 a 239)
 ip link add  name vxlan10 type vxlan id 10 dev eth0 group 239.1.1.1 dstport 4789
-
-#Attribution ip a l’interface vxlan
-ip addr add 20.1.1.1/24 dev vxlan10
 
 #Ajout de l'interface eth1 du routeur dans le bridge br0
 brctl addif br0 eth1

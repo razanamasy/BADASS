@@ -1,13 +1,13 @@
 #!/bin/bash
 
 declare -A script_mapping=(
-  ["host_hrazanam-1"]="ip addr add 20.1.1.1/24 dev eth1"
-  ["host_hrazanam-2"]="ip addr add 20.1.1.2/24 dev eth0"
-  ["host_hrazanam-3"]="ip addr add 20.1.1.3/24 dev eth0"
-  ["host_hrazanam-4"]="ip addr add 21.1.1.1/24 dev eth0"
-  ["host_hrazanam-5"]="ip addr add 21.1.1.2/24 dev eth0"
-  ["host_hrazanam-6"]="ip addr add 21.1.1.3/24 dev eth0"
-  ["host_hrazanam-7"]="ip addr add 21.1.1.4/24 dev eth0"
+  ["host_alilin-1"]="ip addr add 20.1.1.1/24 dev eth1"
+  ["host_alilin-2"]="ip addr add 20.1.1.2/24 dev eth0"
+  ["host_alilin-3"]="ip addr add 20.1.1.3/24 dev eth0"
+  ["host_alilin-4"]="ip addr add 21.1.1.1/24 dev eth0"
+  ["host_alilin-5"]="ip addr add 21.1.1.2/24 dev eth0"
+  ["host_alilin-6"]="ip addr add 21.1.1.3/24 dev eth0"
+  ["host_alilin-7"]="ip addr add 21.1.1.4/24 dev eth0"
 )
 
 for container in $(docker ps --filter "ancestor=busybox" --format "{{.Names}}");

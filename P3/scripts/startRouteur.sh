@@ -1,10 +1,10 @@
 #!/bin/bash
 
 declare -A script_mapping=(
-  ["routeur_alilin-1"]="/scripts_p3/router_reflector.sh"
-  ["routeur_alilin-2"]="/scripts_p3/router_1.sh"
-  ["routeur_alilin-3"]="/scripts_p3/router_2.sh"
-  ["routeur_alilin-4"]="/scripts_p3/router_3.sh"
+  ["router_hrazanam-1"]="/scripts_p3/router_reflector.sh"
+  ["router_hrazanam-2"]="/scripts_p3/router_1.sh"
+  ["router_hrazanam-3"]="/scripts_p3/router_2.sh"
+  ["router_hrazanam-4"]="/scripts_p3/router_3.sh"
 )
 
 for container in $(docker ps --filter "ancestor=routing" --format "{{.Names}}");

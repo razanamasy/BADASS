@@ -43,21 +43,22 @@ In an EVPN network, iBGP is used to exchange MAC addresses between the different
 In summary, the OSPF underlay routing protocol in an EVPN IBGP deployment is used to provide IP-based connectivity between the PE routers, which allows them to exchange BGP EVPN routes containing information about the MAC and IP addresses associated with the customerVLANs that are being transported over the EVPN overlay network.
 
 
-## Unerdal and Overlay 
-<img src="images/lays.png" alt="Lays" width="100" heigh="100" >
+## Unerdlay and Overlay 
+<img src="images/lays.png" alt="Lays" >
+
 ## What is GNS3 ? 
 GNS3 consists of two software components:
 
 The GNS3-all-in-one software (GUI) : client interface to set up and see the device’s architecture
 The GNS3 virtual machine (VM) : where to run the typologies
 
-Typologies : devices architecture setup
+- Typologies : devices architecture setup
 
-So, When you create topologies in GNS3 using the all-in-one software GUI client, the devices created need to be hosted and run by a server process. You have a few options for the server part of the software:
+- So, When you create topologies in GNS3 using the all-in-one software GUI client, the devices created need to be hosted and run by a server process. You have a few options for the server part of the software:
 
-Local GNS3 server
-Local GNS3 VM
-Remote GNS3 VM
+- Local GNS3 server
+- Local GNS3 VM
+- Remote GNS3 VM
 
 
 ### Prerequisites

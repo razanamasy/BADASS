@@ -12,12 +12,14 @@
   </p>
 </div>
 
+### Contributors
+#### Hina Razanamasy and Alice Lin
 
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
    	Le projet à pour but de nous faire découvrir les VxLANS.
-		Nous avons créé et configuré des topologies de VxLANS sur GNS3 
+	Nous avons créé et configuré des topologies de VxLANS sur GNS3 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 

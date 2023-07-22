@@ -52,7 +52,13 @@ The main purpose of GARP messages is to update or announce information about the
 ### The data plane learning.
 #### https://yurmagccie.wordpress.com/2018/08/15/vxlan-part-1-flood-and-learn/
 The purpose of data plan learning is to flood all machine.
-Once a packet is flooded to every VTEP that is subscribed to a multicast group, a VTEP can learn source MAC address from original packet (inner headers) and VTEP’s loopback address that encapsulated and flooded this packet (outer headers), so traffic will be forwarded as unicast in future.
+The host knows the IP address of the destination, but not its MAC. It will send an ARP request (BUM traffic) to discover this information.
+
+The ARP request reaches the switch. The switch needs to send it to all VTEPs with this VNI, as well as to all local ports with this VNI. To do this, it sends the ARP to the appropriate multicast group.
+
+When the VTEPs receive the ARP, they cache the IP to MAC information for possible use later. The VTEPs forward the ARP to all ports that belong to the VNI.
+
+One of the hosts will respond to the ARP, while the rest will discard the request. 
 
 ## Why do we need OSPF ? 
 The OSPF is used for the underlay routing protocol in an EVPN IBGP deployment. It is used to provide IP-based connectivity between the leaf-switch, which allows them to exchange BGP EVPN routes containing information about the MAC and IP addresses associated with the customerVLANs that are being transported over the EVPN overlay network.

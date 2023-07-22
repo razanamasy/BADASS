@@ -37,18 +37,19 @@
 
 <!-- GETTING STARTED -->
 ## Address learning BGP EVPN
-We use control plane learning.
+### The control plane learning.
 In BGP EVPN, VTEPs exchange MAC-to-VTEP mappings directly using BGP messages. When a VTEP learns a new MAC address, it advertises the mapping along with the associated VXLAN Network Identifier (VNI) to other VTEPs in the network. This creates a distributed control plane, allowing all VTEPs to learn about each other's MAC-to-VTEP mappings without the need for an external router.
-
-It's better than using Data plane learning as we don't need to flood all machines. So if a BUM traffic arrives, the VTEP just have to send it to the right multicast group.
 
 “Control plane learning means that switches learn MAC addresses before there’re needed !
 This work the same way as a routing protocol : switched peer with each other using BGP, and share the addresses that they know about → this uses EVPN address family“
 Address families : they are ways for BGP to carry reachability information for different protocols.
-Each switch runs BGP.
+Each switch runs BGP. So if a BUM traffic arrives, the VTEP just have to send it to the right multicast group.
 BGP make the Vteps to learn each other and include informations of each VTEPS : the MAC address associated with them thanks to GARP message : 
 
 The main purpose of GARP messages is to update or announce information about the device to other devices on the same network segment : MAC address updates
+
+### The data plane learning.
+The purpose of data plan learning is to flood all machine. 
 
 ## Why do we need OSPF ? 
 The OSPF is used for the underlay routing protocol in an EVPN IBGP deployment. It is used to provide IP-based connectivity between the leaf-switch, which allows them to exchange BGP EVPN routes containing information about the MAC and IP addresses associated with the customerVLANs that are being transported over the EVPN overlay network.

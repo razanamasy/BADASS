@@ -37,7 +37,7 @@
 
 <!-- GETTING STARTED -->
 ## Address learning BGP EVPN
-We use control plane learning \n
+We use control plane learning
 In BGP EVPN, VTEPs exchange MAC-to-VTEP mappings directly using BGP messages. When a VTEP learns a new MAC address, it advertises the mapping along with the associated VXLAN Network Identifier (VNI) to other VTEPs in the network. This creates a distributed control plane, allowing all VTEPs to learn about each other's MAC-to-VTEP mappings without the need for an external router.
 
 It's better than using Data plane learning as we don't need to flood all machines. So if a BUM traffic arrives, the VTEP just have to send it to the right multicast group.

@@ -19,7 +19,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
    	Le projet à pour but de nous faire découvrir les VxLANS.
-	Nous avons créé et configuré des topologies de VxLANS sur GNS3 
+	Nous avons créé une topology spine-leaf (underlay) que nous avons configure pour mettre en place des VxLAN (overlay)
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 

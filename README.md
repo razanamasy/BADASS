@@ -49,7 +49,9 @@ BGP make the Vteps to learn each other and include informations of each VTEPS : 
 The main purpose of GARP messages is to update or announce information about the device to other devices on the same network segment : MAC address updates
 
 ### The data plane learning.
-The purpose of data plan learning is to flood all machine. 
+#### https://yurmagccie.wordpress.com/2018/08/15/vxlan-part-1-flood-and-learn/
+The purpose of data plan learning is to flood all machine.
+Once a packet is flooded to every VTEP that is subscribed to a multicast group, a VTEP can learn source MAC address from original packet (inner headers) and VTEP’s loopback address that encapsulated and flooded this packet (outer headers), so traffic will be forwarded as unicast in future.
 
 ## Why do we need OSPF ? 
 The OSPF is used for the underlay routing protocol in an EVPN IBGP deployment. It is used to provide IP-based connectivity between the leaf-switch, which allows them to exchange BGP EVPN routes containing information about the MAC and IP addresses associated with the customerVLANs that are being transported over the EVPN overlay network.
